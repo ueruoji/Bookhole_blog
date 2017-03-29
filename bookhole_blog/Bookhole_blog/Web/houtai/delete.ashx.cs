@@ -15,6 +15,49 @@ namespace Bookhole_blog.Web.houtai
         {
             context.Response.ContentType = "text/plain";
             int id = 0;
+            //图片
+            if (context.Request["page"] == "img")
+            {
+                id = Convert.ToInt32(context.Request["id"]);
+                BLL.img bll_img = new BLL.img();
+                if (bll_img.Delete(id) == true)
+                {
+                    context.Response.Write("删除成功");
+                }
+                else
+                {
+                    context.Response.Write("删除失败");
+                }
+            }
+            //用户
+            if (context.Request["page"] == "user")
+            {
+                id = Convert.ToInt32(context.Request["id"]);
+                BLL.user bll_user = new BLL.user();
+                if (bll_user.Delete(id) == true)
+                {
+                    context.Response.Write("删除成功");
+                }
+                else
+                {
+                    context.Response.Write("删除失败");
+                }
+            }
+            //博客评论
+            if (context.Request["page"] == "tell") {
+                id = Convert.ToInt32(context.Request["id"]);
+                BLL.tell bll_tell = new BLL.tell();
+                bool tell_delete =  bll_tell.Delete(id);
+                if (tell_delete == true)
+                {
+                    context.Response.Write("删除成功");
+                }
+                else
+                {
+                    context.Response.Write("删除失败");
+                }
+            }
+            //博客
             if (context.Request["page"] == "blog") {
                 id = Convert.ToInt32(context.Request["id"]);
                 BLL.blogs bll_blog = new BLL.blogs();
@@ -28,6 +71,7 @@ namespace Bookhole_blog.Web.houtai
                     context.Response.Write("删除失败");
                 }
             }
+            //博客类型
             if (context.Request["page"] == "type") {
                 id = Convert.ToInt32(context.Request["id"]);
                 BLL.blog_type bll_type = new BLL.blog_type();

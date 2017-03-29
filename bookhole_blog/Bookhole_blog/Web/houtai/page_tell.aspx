@@ -59,19 +59,19 @@
 
 
                    <li>
-                        <a href="index.html"><i class="fa fa-dashboard "></i>主页</a>
+                        <a href="Home_page.aspx"><i class="fa fa-dashboard "></i>主页</a>
                     </li>
                     <li>
                         <a href="#"  class="active-menu-top"><i class="fa fa-desktop "></i>博客<span class="fa arrow"></span></a>
                          <ul class="nav nav-second-level collapse in">
                             <li>
-                                <a  href="panel-tabs.html"><i class="fa fa-toggle-on"></i>博客类型</a>
+                                <a  href="page_type.aspx"><i class="fa fa-toggle-on"></i>博客类型</a>
                             </li>
                             <li>
-                                <a href="notification.html"><i class="fa fa-bell "></i>博客</a>
+                                <a href="page_blog.aspx"><i class="fa fa-bell "></i>博客</a>
                             </li>
                              <li>
-                                <a class="active-menu" href="progress.html"><i class="fa fa-circle-o "></i>博客评论</a>
+                                <a class="active-menu" href="page_tell.aspx"><i class="fa fa-circle-o "></i>博客评论</a>
                             </li>
                         </ul>
                     </li>
@@ -79,25 +79,14 @@
                         <a href="#"><i class="fa fa-yelp "></i>用户 <span class="fa arrow"></span></a>
                          <ul class="nav nav-second-level">
                             <li>
-                                <a href="invoice.html"><i class="fa fa-coffee"></i>用户管理</a>
+                                <a href="page_user.aspx"><i class="fa fa-coffee"></i>用户管理</a>
                             </li>
                         </ul>
                     </li>
                     <li>
-                        <a href="gallery.html"><i class="fa fa-anchor "></i>图片</a>
+                        <a href="page_img.aspx"><i class="fa fa-anchor "></i>图片</a>
                     </li>
-                    <li>
-                        <a href="#"><i class="fa fa-bicycle "></i>Forms <span class="fa arrow"></span></a>
-                         <ul class="nav nav-second-level">
-                           
-                             <li>
-                                <a href="form.html"><i class="fa fa-desktop "></i>Basic </a>
-                            </li>
-                             <li>
-                                <a href="form-advance.html"><i class="fa fa-code "></i>Advance</a>
-                            </li>
-                        </ul>
-                    </li>
+                   
                 </ul>
 
             </div>
@@ -114,80 +103,38 @@
                             <table class="table table-striped table-bordered table-hover">
                                 <thead>
                                     <tr>
-                                        <th>#</th>
-                                        <th>First Name</th>
-                                        <th>Last Name</th>
-                                        <th>Username</th>
-                                        <th>User No.</th>
+                                        <th></th>
+                                        <th>博客</th>
+                                        <th>查看</th>
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    <%for (int i = 0; i < list_blog.Count; i++)
+                                        { %>
                                     <tr>
-                                        <td>1</td>
-                                        <td><span class="label label-danger">Mark</span></td>
-                                        <td>Otto</td>
-                                        <td>@mdo</td>
-                                        <td><span class="label label-info">100090</span></td>
+                                        <td><%=list_blog[i].Blog_id %></td>
+                                        <td><span class="label label-danger"></span><%=list_blog[i].Blog_title %></td>
+                                        <td><span class="label label-info"><a href="javascript:void(0)" onclick="select(<%=list_blog[i].Blog_id%>)">查看</a></span></td>
                                     </tr>
-                                    <tr>
-                                        <td>2</td>
-                                        <td>Jacob</td>
-                                        <td>Thornton</td>
-                                        <td>@fat</td>
-                                        <td>100090</td>
-                                    </tr>
-                                    <tr>
-                                        <td>3</td>
-                                        <td>Larry</td>
-                                        <td><span class="label label-danger">the Bird</span> </td>
-                                        <td>@twitter</td>
-                                        <td>100090</td>
-                                    </tr>
-                                    <tr>
-                                        <td>4</td>
-                                        <td><span class="label label-success">Mark</span></td>
-                                        <td>Otto</td>
-                                        <td>@mdo</td>
-                                        <td><span class="label label-info">100090</span></td>
-                                    </tr>
-
-                                    <tr>
-                                        <td>5</td>
-                                        <td>Larry</td>
-                                        <td><span class="label label-primary">the Bird</span></td>
-                                        <td>@twitter</td>
-                                        <td>100090</td>
-                                    </tr>
-                                    <tr>
-                                        <td>6</td>
-                                        <td><span class="label label-warning">Jacob</span></td>
-                                        <td><span class="label label-success">Thornton</span></td>
-                                        <td>@fat</td>
-                                        <td><span class="label label-danger">100090</span></td>
-                                    </tr>
-                                    <tr>
-                                        <td>7</td>
-                                        <td>Larry</td>
-                                        <td><span class="label label-primary">the Bird</span></td>
-                                        <td>@twitter</td>
-                                        <td>100090</td>
-                                    </tr>
-                                    <tr>
-                                        <td>8</td>
-                                        <td><span class="label label-warning">Jacob</span></td>
-                                        <td><span class="label label-success">Thornton</span></td>
-                                        <td>@fat</td>
-                                        <td><span class="label label-danger">100090</span></td>
-                                    </tr>
-                                    <tr>
-                                        <td>9</td>
-                                        <td><span class="label label-success">Mark</span></td>
-                                        <td>Otto</td>
-                                        <td>@mdo</td>
-                                        <td><span class="label label-info">100090</span></td>
-                                    </tr>
+                                       <% } %>
                                 </tbody>
                             </table>
+                            <table class="table table-striped table-bordered table-hover">
+                                 <thead>
+                                    <tr>
+                                        <th>用户</th>
+                                        <th>评论</th>
+                                        <th>时间</th>
+                                        <th>删除</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="tell_table">
+                                    
+                                   
+                                </tbody>
+
+                            </table>
+                          <span id="msg"></span>  
                         </div>
                     </div>
                 
@@ -197,9 +144,6 @@
         <!-- /. PAGE WRAPPER  -->
     </div>
     <!-- /. WRAPPER  -->
-    <div id="footer-sec">
-        &copy; 2014 YourCompany | More Templates <a href="http://www.cssmoban.com/" target="_blank" title="模板之家">模板之家</a> - Collect from <a href="http://www.cssmoban.com/" title="网页模板" target="_blank">网页模板</a>
-    </div>
     <!-- /. FOOTER  -->
     <!-- SCRIPTS -AT THE BOTOM TO REDUCE THE LOAD TIME-->
     <!-- JQUERY SCRIPTS -->
@@ -210,7 +154,23 @@
     <script src="assets/js/jquery.metisMenu.js"></script>
     <!-- CUSTOM SCRIPTS -->
     <script src="assets/js/custom.js"></script>
-
+    <script>
+        function select(i) {
+            $.post("editor.ashx", { "id": i,"page":"tell" }, function (a) {
+                var js = $.parseJSON(a);
+                $("#tell_table").children().remove();
+                for (var i = 0; i < js.length; i++) {
+                    $("#tell_table").append("<tr><td>" + js[i].Tell_username + "</td><td><span class=\"label label-danger\">" + js[i].Tell_text + "</span></td><td>" + js[i].Tell_time + "</td><td><span class=\"label label-info\"><a href=\"javascript:void(0)\" onclick=\"tell_delete("+js[i].Tell_id+")\">删除</a></span></td></tr>")
+                }
+            })
+        }
+        function tell_delete(i) {
+            $.post("delete.ashx", { "id": i, "page": "tell" }, function (a) {
+                window.location.reload();
+                $("#msg").text(a);
+            })
+        }
+    </script>
 
 </body>
 </html>

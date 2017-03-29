@@ -8,6 +8,7 @@ using System.Data;
 using System.IO;
 using System.Web.Security;
 using LTP.Accounts.Bus;
+using System.Text.RegularExpressions;
 namespace Bookhole_blog.Web 
 {
 	/// <summary>
@@ -71,7 +72,7 @@ namespace Bookhole_blog.Web
 		}
 		protected void Application_BeginRequest(Object sender, EventArgs e)
 		{
-		}
+        }
 		protected void Application_EndRequest(Object sender, EventArgs e)
 		{
 		}

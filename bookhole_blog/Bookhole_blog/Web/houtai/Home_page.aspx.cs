@@ -12,6 +12,9 @@ namespace Bookhole_blog.Web.houtai
         protected void Page_Load(object sender, EventArgs e)
         {
 
+            if (Request.Cookies["ht_id"]== null && Request.Cookies["ht_pwd"] == null) {
+                Response.Redirect("login.html");
+            }
         }
     }
 }

@@ -60,19 +60,19 @@
                     </li>
 
 <li>
-                        <a href="index.html"><i class="fa fa-dashboard "></i>主页</a>
+                        <a href="Home_page.aspx"><i class="fa fa-dashboard "></i>主页</a>
                     </li>
                     <li>
                         <a href="#"  ><i ></i>博客<span class="fa arrow"></span></a>
                          <ul class="nav nav-second-level ">
                             <li>
-                                <a  href="panel-tabs.html"><i class="fa fa-toggle-on"></i>博客类型</a>
+                                <a  href="page_type.aspx"><i class="fa fa-toggle-on"></i>博客类型</a>
                             </li>
                             <li>
-                                <a href="notification.html"><i class="fa fa-bell "></i>博客</a>
+                                <a href="page_blog.aspx"><i class="fa fa-bell "></i>博客</a>
                             </li>
                              <li>
-                                <a href="progress.html"><i class="fa fa-circle-o "></i>博客评论</a>
+                                <a href="page_tell.aspx"><i class="fa fa-circle-o "></i>博客评论</a>
                             </li>
                         </ul>
                     </li>
@@ -80,25 +80,14 @@
                         <a href="#" class="active-menu-top"><i class="fa fa-yelp "></i>用户 <span class="fa arrow"></span></a>
                          <ul class="nav nav-second-level collapse in">
                             <li>
-                                <a class="active-menu" href="invoice.html"><i class="fa fa-coffee"></i>用户管理</a>
+                                <a class="active-menu" href="page_user.aspx"><i class="fa fa-coffee"></i>用户管理</a>
                             </li>
                         </ul>
                     </li>
                     <li>
-                        <a href="gallery.html"><i class="fa fa-anchor "></i>图片</a>
+                        <a href="page_img.aspx"><i class="fa fa-anchor "></i>图片</a>
                     </li>
-                    <li>
-                        <a href="#"><i class="fa fa-bicycle "></i>Forms <span class="fa arrow"></span></a>
-                         <ul class="nav nav-second-level">
-                           
-                             <li>
-                                <a href="form.html"><i class="fa fa-desktop "></i>Basic </a>
-                            </li>
-                             <li>
-                                <a href="form-advance.html"><i class="fa fa-code "></i>Advance</a>
-                            </li>
-                        </ul>
-                    </li>
+                   
                 </ul>
             </div>
 
@@ -106,165 +95,66 @@
         <!-- /. NAV SIDE  -->
         <div id="page-wrapper">
             <div id="page-inner">
-                <div class="row">
-                    <div class="col-md-12">
-                        <h1 class="page-head-line">INVOICE </h1>
 
-                    </div>
-                </div>
-                <!-- /. ROW  -->
-                <div class="row">
-                    <div class="col-md-12">
-                       <div >
-     
-      <div class="row pad-top-botm ">
-         <div class="col-lg-6 col-md-6 col-sm-6 ">
-            <img src="assets/img/logo-invoice.png" style="padding-bottom:20px;" /> 
-         </div>
-          <div class="col-lg-6 col-md-6 col-sm-6">
-            
-               <strong>   OxyRed  Technologies  LLC.</strong>
-              <br />
-                  <i>Address :</i> 245/908 , New York Lane,
-              <br />
-                  Forth Street , Deumark,
-              <br />
-                  United States.
-              
-         </div>
-     </div>
-     <div  class="row text-center contact-info">
-         <div class="col-lg-12 col-md-12 col-sm-12">
-             <hr />
-             <span>
-                 <strong>Email : </strong>  info@yourdomain.com 
-             </span>
-             <span>
-                 <strong>Call : </strong>  +95 - 890- 789- 9087 
-             </span>
-              <span>
-                 <strong>Fax : </strong>  +012340-908- 890 
-             </span>
-             <hr />
-         </div>
-     </div>
-     <div  class="row pad-top-botm client-info">
-         <div class="col-lg-6 col-md-6 col-sm-6">
-         <h4>  <strong>Client Information</strong></h4>
-           <strong>  Jhon Deo Chuixae</strong>
-             <br />
-                  <b>Address :</b> 145/908 , New York Lane,
-              <br />
-                 United States.
-             <br />
-             <b>Call :</b> +90-908-567-0987
-              <br />
-             <b>E-mail :</b> info@clientdomain.com
-         </div>
-          <div class="col-lg-6 col-md-6 col-sm-6">
-            
-               <h4>  <strong>Payment Details </strong></h4>
-            <b>Bill Amount :  990 USD </b>
-              <br />
-               Bill Date :  01th August 2014
-              <br />
-               <b>Payment Status :  Paid </b>
-               <br />
-               Delivery Date :  10th August 2014
-              <br />
-               Purchase Date :  30th July 2014
-         </div>
-     </div>
      <div class="row">
          <div class="col-lg-12 col-md-12 col-sm-12">
            <div class="table-responsive">
                                 <table class="table table-striped table-bordered table-hover">
                             <thead>
                                 <tr>
-                                    <th>S. No.</th>
-                                    <th>Perticulars</th>
-                                    <th>Quantity.</th>
-                                    <th>Unit Price</th>
-                                     <th>Sub Total</th>
+                                    <th>账号</th>
+                                    <th>用户名</th>
+                                    <th>图片</th>
+                                    <th>QQ</th>
+                                    <th>电话</th>
+                                    <th>编辑</th>
+                                    <th>删除</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td>1</td>
-                                    <td>Website Design</td>
-                                    <td>1</td>
-                                    <td>300 USD</td>
-                                    <td>300 USD</td>
+                                <%for (int i = 0; i < list_user.Count; i++)
+                                    {%>
+                                 <tr>
+                                    <td><%=list_user[i].User_id %></td>
+                                    <td><%=list_user[i].User_name %></td>
+                                    <td><img src="<%=list_user[i].User_img %>" style="width:50px;height:50px;"/></td>
+                                    <td><%=list_user[i].User_qq %></td>
+                                    <td><%=list_user[i].User_phone %></td>
+                                    <td><a href="javascript:void(0)"  onclick="editor(<%=i %>)">编辑</a> </td>
+                                    <td><a href="javascript:void(0)" onclick="t_delete(<%=list_user[i].User_id %>)">删除</a></td>
                                 </tr>
-                                <tr>
-                                    <td>2</td>
-                                    <td>Plugin Dev.</td>
-                                    <td>2</td>
-                                    <td>200 USD</td>
-                                    <td>400 USD</td>
-                                </tr>
-                                <tr>
-                                     <td>3</td>
-                                    <td>Hosting Domains</td>
-                                    <td>2</td>
-                                    <td>100 USD</td>
-                                    <td>200 USD</td>
-                                </tr>
+                                  <%  } %>
+                              <tr>
+                                        <td><input type="text" id="text_id" style="width:100px;"/></td>
+                                    
+                                        <td><input type="text" id="text_name" style="width:70px;"/></td>
+                                        <td style="width:100px;">
+                                            <a href="javascript:;" class="a-upload">
+                                                <input type="file" id="file1" name="file" />选择图片
+                                            </a>
+                                            <input type="button" value="上传" />
+                                            <img id="img1"  src="" style="width:100px;height:100px" />
+                                        </td>
+                                        <td><input type="text" id="text_qq" style="width:100px;" /></td>
+                                        <td><input type="text" id="text_phone" style="width:100px;"/></td>
+                                        <td><a  href="javascript:void(0)" onclick="t_editor()">编辑完成</a></td>
+                                        <td><a  href="javascript:void(0)" onclick="t_add()">添加</a></td>
+                                    </tr>
+                               
                                 
                             </tbody>
                         </table>
                </div>
-             <hr />
-             <div class="ttl-amts">
-               <h5>  Total Amount : 900 USD </h5>
-             </div>
-             <hr />
-              <div class="ttl-amts">
-                  <h5>  Tax : 90 USD ( by 10 % on bill ) </h5>
-             </div>
-             <hr />
-              <div class="ttl-amts">
-                  <h4> <strong>Bill Amount : 990 USD</strong> </h4>
-             </div>
+              <span id="msg"></span>
+             
          </div>
      </div>
-      <div class="row">
-         <div class="col-lg-12 col-md-12 col-sm-12">
-            <strong> Important: </strong>
-             <ol>
-                  <li>
-                    This is an electronic generated invoice so doesn't require any signature.
-
-                 </li>
-                 <li>
-                     Please read all terms and polices on  www.yourdomaon.com for returns, replacement and other issues.
-
-                 </li>
-             </ol>
-             </div>
-         </div>
-      <div class="row pad-top-botm">
-         <div class="col-lg-12 col-md-12 col-sm-12">
-             <hr />
-             <a href="#" class="btn btn-primary btn-lg" >Print Invoice</a>
-             &nbsp;&nbsp;&nbsp;
-              <a href="#" class="btn btn-success btn-lg" >Download In Pdf</a>
-
-             </div>
-         </div>
- </div>
-                    </div>
-                </div>
-
-            </div>
+     
             <!-- /. PAGE INNER  -->
         </div>
         <!-- /. PAGE WRAPPER  -->
     </div>
     <!-- /. WRAPPER  -->
-    <div id="footer-sec">
-        &copy; 2014 YourCompany | More Templates <a href="http://www.cssmoban.com/" target="_blank" title="模板之家">模板之家</a> - Collect from <a href="http://www.cssmoban.com/" title="网页模板" target="_blank">网页模板</a>
-    </div>
     <!-- /. FOOTER  -->
     <!-- SCRIPTS -AT THE BOTOM TO REDUCE THE LOAD TIME-->
     <!-- JQUERY SCRIPTS -->
@@ -275,7 +165,88 @@
     <script src="assets/js/jquery.metisMenu.js"></script>
     <!-- CUSTOM SCRIPTS -->
     <script src="assets/js/custom.js"></script>
+    <script src="assets/js/ajaxfileupload.js"></script>
+    <script>
+        $(function () {
 
+            $(":button").click(function () {
+                ajaxFileUpload();
+            })
+        })
+        function ajaxFileUpload() {
+            $.ajaxFileUpload
+            (
+                {
+                    url: 'img.ashx', //用于文件上传的服务器端请求地址
+                    secureuri: false, //是否需要安全协议，一般设置为false
+                    fileElementId: 'file1', //文件上传域的ID
+                    dataType: 'json', //返回值类型 一般设置为json
+                    type: "post",
+                    data: { name: 'blog' },
+                    success: function (data, status)  //服务器成功响应处理函数
+                    {
+                        $("#img1").attr("src", "../" + data.imgurl);
+                        if (typeof (data.error) != 'undefined') {
+                            if (data.error != '') {
+                                alert(data.error);
+                            } else {
+                                alert(data.msg);
+                            }
+                        }
+                    },
+                    error: function (data, status, e)//服务器响应失败处理函数
+                    {
+                        alert(e);
+                    }
+                }
+            )
+            return false;
+        }
+        function editor(i) {
+            var id = $("tr:eq(" + (i + 1) + ")").children("td:eq(0)").text();
+            $("#text_id").val(id)
+            $("#text_name").val($("tr:eq(" + (i + 1) + ")").children("td:eq(1)").text())
+            $("#img1").attr("src", $("tr:eq(" + (i + 1) + ")").children("td:eq(2)").children().attr("src"))
+            $("#text_qq").val($("tr:eq(" + (i + 1) + ")").children("td:eq(3)").text())
+            $("#text_phone").val($("tr:eq(" + (i + 1) + ")").children("td:eq(4)").text())
+        }
+        function t_add() {
+            var id = $("#text_id").val();
+            var name = $("#text_name").val()
+            var img = $("#img1").attr("src")
+            var qq = $("#text_qq").val()
+            var phone = $("#text_phone").val()
+            if (id != null && name != null && img != null && qq != null && phone != null ) {
+                $.post("add.ashx", { "page": "user", "id": id, "name": name, "img": img, "qq": qq, "phone": phone}, function (a) {
+                    window.location.reload();
+                    $("#msg").text(a);
+                })
+            } else {
+                $("#msg").text("输入有误");
+            }
+        }
+        function t_editor() {
+            var id = $("#text_id").val();
+            var name = $("#text_name").val()
+            var img = $("#img1").attr("src")
+            var qq = $("#text_qq").val()
+            var phone = $("#text_phone").val()
+            if (id != null && name != null && img != null && qq != null && phone != null) {
+                $.post("editor.ashx", { "page": "user", "id": id, "name": name, "img": img, "qq": qq, "phone": phone}, function (a) {
+                    window.location.reload();
+                    $("#msg").text(a);
+                })
+            } else {
+                $("#msg").text("输入有误");
+            }
+        }
+        function t_delete(i) {
+            $.post("delete.ashx", { "page": "user", "id": i }, function (a) {
+                window.location.reload();
+                $("#msg").text(a);
+            })
+        }
+    </script>
 
 </body>
 </html>

@@ -12,16 +12,23 @@ namespace Bookhole_blog.Web.houtai
         public List<Model.blogs> oblogs { get; set; }
         protected void Page_Load(object sender, EventArgs e)
         {
-            BLL.blogs bll_blogs = new BLL.blogs();
-            List<Model.blogs> blogs = bll_blogs.GetModelList("Blog_delete=0");
-            BLL.blog_type bll_type = new BLL.blog_type();
-
-            for (int i = 0; i < blogs.Count; i++)
+            if (Request.Cookies["ht_id"] == null && Request.Cookies["ht_pwd"] == null)
             {
-                Model.blog_type model_type = bll_type.GetModel((int)blogs[i].Blog_typeid);
-                blogs[i].Blog_typename = model_type.Type_name;
+                Response.Redirect("login.html");
             }
-            oblogs = blogs;
+            else {
+                BLL.blogs bll_blogs = new BLL.blogs();
+                List<Model.blogs> blogs = bll_blogs.GetModelList("Blog_delete=0");
+                BLL.blog_type bll_type = new BLL.blog_type();
+
+                for (int i = 0; i < blogs.Count; i++)
+                {
+                    Model.blog_type model_type = bll_type.GetModel((int)blogs[i].Blog_typeid);
+                    blogs[i].Blog_typename = model_type.Type_name;
+                }
+                oblogs = blogs;
+            }
+            
 
         }
     }

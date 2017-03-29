@@ -14,7 +14,12 @@
         <script src="js/jquery-1.11.2.min.js"></script>
         <script>
             $(function () {
-                $("#login").click(function () {
+                //$.post("bookashx/login.ashx",{"login":login}, function (js) {
+                //    if (js = 1) {
+                //        location.href = "Main.html";
+                //    }
+                //})
+                $("#login_is").click(function () {
                     var pwd = $("#password").val();
                     var username = $("#username").val();
                     var loginkeeping = $("#loginkeeping").val();
@@ -29,10 +34,11 @@
                 })
                 $("#registered").click(function () {
                     var username = $("#usernamesignup").val()
+                    username = username.substring(0, 8);
                     var phone = $("#emailsignup").val()
                     var pwd = $("#passwordsignup").val()
                     var cpwd = $("#passwordsignup_confirm").val()
-                    $.post("bookashx/registered.ashx", { "username": username, "phone": phone, "pwd": pwd, "cpwd": cpw }, function (jso) {
+                    $.post("bookashx/registered.ashx", { "username": username, "phone": phone, "pwd": pwd, "cpwd": cpwd }, function (jso) {
                         if (jso == 1) {
                             location.href = "Main.html";
                         } else {
@@ -57,54 +63,54 @@
                     <div id="wrapper">
                         <div id="login" class="animate form">
                             <form  action="" autocomplete="on"> 
-                                <h1>Log in</h1> 
+                                <h1>登陆</h1> 
                                 <p> 
-                                    <label for="username" class="uname" data-icon="u" > Your email or username </label>
-                                    <input id="username" name="username" required="required" type="text" placeholder="myusername or mymail@mail.com"/>
+                                    <label for="username" class="uname" data-icon="u" > 用户名 </label>
+                                    <input id="username" name="username" required="required" type="text" placeholder="请输入数字-电话/qq"/>
                                 </p>
                                 <p> 
                                     <label for="password" class="youpasswd" data-icon="p"> Your password </label>
-                                    <input id="password" name="password" required="required" type="password" placeholder="eg. X8df!90EO" /> 
+                                    <input id="password" name="password" required="required" type="password" placeholder="密码" /> 
                                 </p>
                                 <p class="keeplogin"> 
 									<input type="checkbox" name="loginkeeping" id="loginkeeping" value="loginkeeping" /> 
-									<label for="loginkeeping">Keep me logged in</label>
+									<label for="loginkeeping">记住我</label>
 								</p>
                                 <p class="login button"> 
-                                    <input type="button" value="Login" /> 
+                                    <input type="button" value="登陆" id="login_is"/> 
 								</p>
                                 <p class="change_link">
-									<span id="wrong"></span>
-									<a href="#toregister" class="to_register">Join us</a>
+									<span id="wrong" style="color:red;"></span>
+									<a href="#toregister" class="to_register">注册</a>
 								</p>
                             </form>
                         </div>
 
                         <div id="register" class="animate form">
                             <form  action="mysuperscript.php" autocomplete="on"> 
-                                <h1> Sign up </h1> 
+                                <h1> 注册 </h1> 
                                 <p> 
-                                    <label for="usernamesignup" class="uname" data-icon="u">Your username</label>
-                                    <input id="usernamesignup" name="usernamesignup" required="required" type="text" placeholder="mysuperusername690" />
+                                    <label for="usernamesignup" class="uname" data-icon="u">用户名</label>
+                                    <input id="usernamesignup" name="usernamesignup" required="required" type="text" placeholder="请输入数字，不得超过八位，超过只取前八位" />
                                 </p>
                                 <p> 
-                                    <label for="emailsignup" class="youmail" data-icon="e" > Your email</label>
-                                    <input id="emailsignup" name="emailsignup" required="required" type="email" placeholder="mysupermail@mail.com"/> 
+                                    <label for="emailsignup" class="youmail" data-icon="e" >联系方式</label>
+                                    <input id="emailsignup" name="emailsignup" required="required" type="email" placeholder="联系电话"/> 
                                 </p>
                                 <p> 
-                                    <label for="passwordsignup" class="youpasswd" data-icon="p">Your password </label>
-                                    <input id="passwordsignup" name="passwordsignup" required="required" type="password" placeholder="eg. X8df!90EO"/>
+                                    <label for="passwordsignup" class="youpasswd" data-icon="p">密码</label>
+                                    <input id="passwordsignup" name="passwordsignup" required="required" type="password" placeholder="牢记密码"/>
                                 </p>
                                 <p> 
-                                    <label for="passwordsignup_confirm" class="youpasswd" data-icon="p">Please confirm your password </label>
-                                    <input id="passwordsignup_confirm" name="passwordsignup_confirm" required="required" type="password" placeholder="eg. X8df!90EO"/>
+                                    <label for="passwordsignup_confirm" class="youpasswd" data-icon="p">核对密码</label>
+                                    <input id="passwordsignup_confirm" name="passwordsignup_confirm" required="required" type="password" placeholder="请在输入一次"/>
                                 </p>
                                 <p class="signin button"> 
-									<input type="button" value="Sign up" id="registered"/> 
+									<input type="button" value="完成" id="registered"/> 
 								</p>
                                 <p class="change_link">  
 									<span id="wrong1"></span>
-									<a href="#tologin" class="to_register"> Go and log in </a>
+									<a href="#tologin" class="to_register">返回登陆</a>
 								</p>
                             </form>
                         </div>

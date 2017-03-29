@@ -465,7 +465,6 @@
     <Content Include="houtai\Home_page.aspx" />
     <Content Include="houtai\login.html" />
     <Content Include="houtai\page_blog.aspx" />
-    <Content Include="houtai\page_form.aspx" />
     <Content Include="houtai\page_img.aspx" />
     <Content Include="houtai\page_tell.aspx" />
     <Content Include="houtai\page_type.aspx" />
@@ -499,6 +498,7 @@
     <Content Include="images\test_01.jpg" />
     <Content Include="images\test_02.jpg" />
     <Content Include="images\test_03.jpg" />
+    <Content Include="js\blog.js" />
     <Content Include="login.html" />
     <Content Include="Main.html" />
     <Content Include="js\bootstrap.min.js" />
@@ -522,10 +522,16 @@
     <Content Include="nivo-lightbox\prev%402x.png" />
     <Content Include="nivo-lightbox\prev.png" />
     <Content Include="nivo-lightbox\Wings.gif" />
-    <Content Include="singlepost.html" />
+    <Content Include="Blog.html" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="bookashx\Blog.ashx.cs">
+      <DependentUpon>Blog.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="bookashx\email.ashx.cs">
+      <DependentUpon>email.ashx</DependentUpon>
+    </Compile>
     <Compile Include="bookashx\login.ashx.cs">
       <DependentUpon>login.ashx</DependentUpon>
     </Compile>
@@ -534,6 +540,9 @@
     </Compile>
     <Compile Include="bookashx\registered.ashx.cs">
       <DependentUpon>registered.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="bookashx\tell.ashx.cs">
+      <DependentUpon>tell.ashx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -565,6 +574,9 @@
     <Compile Include="houtai\Home_page.aspx.designer.cs">
       <DependentUpon>Home_page.aspx</DependentUpon>
     </Compile>
+    <Compile Include="houtai\houtailogin.ashx.cs">
+      <DependentUpon>houtailogin.ashx</DependentUpon>
+    </Compile>
     <Compile Include="houtai\img.ashx.cs">
       <DependentUpon>img.ashx</DependentUpon>
     </Compile>
@@ -574,13 +586,6 @@
     </Compile>
     <Compile Include="houtai\page_blog.aspx.designer.cs">
       <DependentUpon>page_blog.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="houtai\page_form.aspx.cs">
-      <DependentUpon>page_form.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="houtai\page_form.aspx.designer.cs">
-      <DependentUpon>page_form.aspx</DependentUpon>
     </Compile>
     <Compile Include="houtai\page_img.aspx.cs">
       <DependentUpon>page_img.aspx</DependentUpon>
@@ -714,6 +719,18 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="houtai\blog_select.ashx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="houtai\houtailogin.ashx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bookashx\Blog.ashx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bookashx\tell.ashx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bookashx\email.ashx" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

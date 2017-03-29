@@ -12,13 +12,18 @@ namespace Bookhole_blog.Web.houtai
         public List<Model.blog_type> list_type { get; set; }
         protected void Page_Load(object sender, EventArgs e)
         {
-
-            BLL.blog_type bll_type = new BLL.blog_type();
-            list_type = bll_type.GetModelList("");
-
-            if (IsPostBack) {
-
+            if (Request.Cookies["ht_id"] == null && Request.Cookies["ht_pwd"] == null)
+            {
+                Response.Redirect("login.html");
             }
+            else
+            {
+                BLL.blog_type bll_type = new BLL.blog_type();
+                list_type = bll_type.GetModelList("");
+            }
+           
+
+        
         }
     }
 }

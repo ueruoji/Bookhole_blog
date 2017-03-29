@@ -5,7 +5,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Responsive Bootstrap Advance Admin Template</title>
+    <title>书洞博客后台管理程序</title>
 
     <!-- BOOTSTRAP STYLES-->
     <link href="assets/css/bootstrap.css" rel="stylesheet" />
@@ -30,13 +30,13 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">COMPANY NAME</a>
+                <a class="navbar-brand" href="index.html">书洞</a>
             </div>
 
             <div class="header-right">
 
-              <a href="message-task.html" class="btn btn-info" title="New Message"><b>30 </b><i class="fa fa-envelope-o fa-2x"></i></a>
-                <a href="message-task.html" class="btn btn-primary" title="New Task"><b>40 </b><i class="fa fa-bars fa-2x"></i></a>
+              <a href="message-task.html" class="btn btn-info" title="New Message"><b>0</b><i class="fa fa-envelope-o fa-2x"></i></a>
+                <a href="message-task.html" class="btn btn-primary" title="New Task"><b>0</b><i class="fa fa-bars fa-2x"></i></a>
                 <a href="login.html" class="btn btn-danger" title="Logout"><i class="fa fa-exclamation-circle fa-2x"></i></a>
 
 
@@ -51,9 +51,9 @@
                             <img src="assets/img/user.png" class="img-thumbnail" />
 
                             <div class="inner-text">
-                                Jhon Deo Alex
+                                博客
                             <br />
-                                <small>Last Login : 2 Weeks Ago </small>
+                                <small><%=DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") %></small>
                             </div>
                         </div>
 
@@ -61,19 +61,19 @@
 
 
                    <li>
-                        <a href="index.html"><i class="fa fa-dashboard "></i>主页</a>
+                        <a href="Home_page.aspx"><i class="fa fa-dashboard "></i>主页</a>
                     </li>
                     <li>
                         <a href="#"  class="active-menu-top"><i class="fa fa-desktop "></i>博客<span class="fa arrow"></span></a>
                          <ul class="nav nav-second-level ">
                             <li>
-                                <a  href="panel-tabs.html"><i class="fa fa-toggle-on"></i>博客类型</a>
+                                <a  href="page_type.aspx"><i class="fa fa-toggle-on"></i>博客类型</a>
                             </li>
                             <li>
-                                <a href="notification.html"><i class="fa fa-bell "></i>博客</a>
+                                <a href="page_blog.aspx"><i class="fa fa-bell "></i>博客</a>
                             </li>
                              <li>
-                                <a href="progress.html"><i class="fa fa-circle-o "></i>博客评论</a>
+                                <a href="page_tell.aspx"><i class="fa fa-circle-o "></i>博客评论</a>
                             </li>
                         </ul>
                     </li>
@@ -81,24 +81,12 @@
                         <a href="#"><i class="fa fa-yelp "></i>用户 <span class="fa arrow"></span></a>
                          <ul class="nav nav-second-level">
                             <li>
-                                <a href="invoice.html"><i class="fa fa-coffee"></i>用户管理</a>
+                                <a href="page_user.aspx"><i class="fa fa-coffee"></i>用户管理</a>
                             </li>
                         </ul>
                     </li>
                     <li>
-                        <a class="active-menu" href="gallery.html"><i class="fa fa-anchor "></i>图片</a>
-                    </li>
-                    <li>
-                        <a href="#"><i class="fa fa-bicycle "></i>Forms <span class="fa arrow"></span></a>
-                         <ul class="nav nav-second-level">
-                           
-                             <li>
-                                <a href="form.html"><i class="fa fa-desktop "></i>Basic </a>
-                            </li>
-                             <li>
-                                <a href="form-advance.html"><i class="fa fa-code "></i>Advance</a>
-                            </li>
-                        </ul>
+                        <a class="active-menu" href="page_img.aspx"><i class="fa fa-anchor "></i>图片</a>
                     </li>
                 </ul>
             </div>
@@ -107,206 +95,61 @@
         <!-- /. NAV SIDE  -->
         <div id="page-wrapper">
             <div id="page-inner">
-                <div class="row">
-                    <div class="col-md-12">
-                        <h1 class="page-head-line">Gallery Example</h1>
-                        <h1 class="page-subhead-line">This is dummy text , you can replace it with your original text. </h1>
-
-                    </div>
-                </div>
-                <!-- /. ROW  -->
-                <div id="port-folio">
-                      <div class="row " >
-                          <ul id="filters" >
-						<li><span class="filter active" data-filter="landscape nature awesome">All </span></li>
-						<li><span class="filter active">/</span></li>
-						<li><span class="filter" data-filter="landscape">Landscape</span></li>
-						<li><span class="filter">/</span></li>
-						<li><span class="filter" data-filter="nature">Nature</span></li>
-						<li><span class="filter">/</span></li>
-						<li><span class="filter" data-filter="awesome">Awesome</span></li>
-					</ul>
-                <div class="col-md-4 ">
-
-                    <div class="portfolio-item awesome mix_all" data-cat="awesome" >
-
-
-                        <img src="assets/img/portfolio/g.jpg" class="img-responsive " alt="" />
-                        <div class="overlay">
-                            <p>
-                                <span>
-                                Image Orinagal Size: 750x500
-                                </span>
+                   <div class="row">
+         <div class="col-lg-12 col-md-12 col-sm-12">
+           <div class="table-responsive">
+                                <table class="table table-striped table-bordered table-hover">
+                            <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>语录</th>
+                                    <th>图片</th>
+                                    <th>是否显示</th>
+                                    <th>编辑</th>
+                                    <th>删除</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <%for (int i = 0; i < List_img.Count; i++)
+                                    {%>
+                                 <tr>
+                                    <td><%=List_img[i].Img_id %></td>
+                                    <td><%=List_img[i].Img_text %></td>
+                                    <td><img src="<%=List_img[i].Img_address %>" style="width:50px;height:50px;"/></td>
+                                    <td><%=List_img[i].Img_is %></td>
+                                    <td><a href="javascript:void(0)"  onclick="editor(<%=i %>)">编辑</a> </td>
+                                    <td><a href="javascript:void(0)" onclick="t_delete(<%=List_img[i].Img_id %>)">删除</a></td>
+                                </tr>
+                                  <%  } %>
+                              <tr>
+                                        <td><input type="text" id="text_id" style="width:30px;"/></td>
+                                    
+                                        <td><textarea id="text_text" required rows="5" cols="60"></textarea></td>
+                                        <td style="width:100px;">
+                                            <a href="javascript:;" class="a-upload">
+                                                <input type="file" id="file1" name="file" />选择图片
+                                            </a>
+                                            <input type="button" value="上传" />
+                                            <img id="img1"  src="" style="width:100px;height:100px" />
+                                        </td>
+                                        <td><input type="text" id="text_is" style="width:30px;" /></td>
+                                        <td><a  href="javascript:void(0)" onclick="t_editor()">编辑完成</a></td>
+                                        <td><a  href="javascript:void(0)" onclick="t_add()">添加</a></td>
+                                    </tr>
                                
-                                PROJECT TITLE HERE
-                            </p>
-                            <a class="preview btn btn-info " title="Image Title Here" href="assets/img/portfolio/g.jpg"><i class="fa fa-plus fa-2x"></i></a>
-
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 ">
-
-                    <div class="portfolio-item landscape mix_all" data-cat="landscape" >
-
-
-                        <img src="assets/img/portfolio/b.jpg" class="img-responsive " alt="" />
-                        <div class="overlay">
-                            <p>
-                                <span>
-                                Image Orinagal Size: 750x500
-                                </span>
-                               
-                                PROJECT TITLE HERE
-                            </p>
-                            <a class="preview btn btn-info" title="Image Title Here" href="assets/img/portfolio/b.jpg"><i class="fa fa-plus fa-2x"></i></a>
-
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 ">
-
-                    <div class="portfolio-item nature mix_all" data-cat="nature" >
+                                
+                            </tbody>
+                        </table>
+               </div>
+              <span id="msg"></span>
+             
+         </div>
+     </div>
+                
+         
+                
 
 
-                        <img src="assets/img/portfolio/c.png" class="img-responsive " alt="" />
-                        <div class="overlay">
-                          <p>
-                                <span>
-                                Image Orinagal Size: 750x500
-                                </span>
-                               
-                                PROJECT TITLE HERE
-                            </p>
-                            <a class="preview btn btn-info" title="Image Title Here" href="assets/img/portfolio/c.png"><i class="fa fa-plus fa-2x"></i></a>
-
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="row " style="padding-top: 50px;">
-                <div class="col-md-4 ">
-
-                    <div  class="portfolio-item nature mix_all" data-cat="nature" >
-
-
-                        <img src="assets/img/portfolio/d.jpg" class="img-responsive " alt="" />
-                        <div class="overlay">
-                           <p>
-                                <span>
-                                Image Orinagal Size: 750x500
-                                </span>
-                               
-                                PROJECT TITLE HERE
-                            </p>
-                            <a class="preview btn btn-info " title="Image Title Here" href="assets/img/portfolio/d.jpg"><i class="fa fa-plus fa-2x"></i></a>
-
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 ">
-
-                    <div  class="portfolio-item nature mix_all" data-cat="nature" >
-
-
-                        <img src="assets/img/portfolio/e.jpg" class="img-responsive " alt="" />
-                        <div class="overlay">
-                            <p>
-                                <span>
-                                Image Orinagal Size: 750x500
-                                </span>
-                               
-                                PROJECT TITLE HERE
-                            </p>
-                            <a class="preview btn btn-info" title="Image Title Here" href="assets/img/portfolio/e.jpg"><i class="fa fa-plus fa-2x"></i></a>
-
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 ">
-
-                    <div  class="portfolio-item nature mix_all" data-cat="nature" >
-
-
-                        <img src="assets/img/portfolio/h.jpg" class="img-responsive " alt="" />
-                        <div class="overlay">
-                          <p>
-                                <span>
-                                Image Orinagal Size: 750x500
-                                </span>
-                               
-                                PROJECT TITLE HERE
-                            </p>
-                            <a class="preview btn btn-info" title="Image Title Here" href="assets/img/portfolio/h.jpg"><i class="fa fa-plus fa-2x"></i></a>
-
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-                    <div class="row "  style="padding-top: 50px;" >
-                <div class="col-md-4 ">
-
-                    <div  class="portfolio-item nature mix_all" data-cat="nature" >
-
-
-                        <img src="assets/img/portfolio/g.jpg" class="img-responsive " alt="" />
-                        <div class="overlay">
-                            <p>
-                                <span>
-                                Image Orinagal Size: 750x500
-                                </span>
-                               
-                                PROJECT TITLE HERE
-                            </p>
-                            <a class="preview  btn btn-info" title="Image Title Here" href="assets/img/portfolio/g.jpg"> <i class="fa fa-plus fa-2x"></i></a>
-
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 ">
-
-                    <div  class="portfolio-item awesome mix_all" data-cat="awesome" >
-
-
-                        <img src="assets/img/portfolio/b.jpg" class="img-responsive " alt="" />
-                        <div class="overlay">
-                            <p>
-                                <span>
-                                Image Orinagal Size: 750x500
-                                </span>
-                               
-                                PROJECT TITLE HERE
-                            </p>
-                            <a class="preview btn btn-info" title="Image Title Here" href="assets/img/portfolio/b.jpg"><i class="fa fa-plus fa-2x"></i></a>
-
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 ">
-
-                    <div  class="portfolio-item nature landscape mix_all" data-cat="nature landscape" >
-
-
-                        <img src="assets/img/portfolio/c.png" class="img-responsive " alt="" />
-                        <div class="overlay">
-                          <p>
-                                <span>
-                                Image Orinagal Size: 750x500
-                                </span>
-                               
-                                PROJECT TITLE HERE
-                            </p>
-                            <a class="preview btn btn-info" title="Image Title Here" href="assets/img/portfolio/c.png"><i class="fa fa-plus fa-2x"></i></a>
-
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-                </div>
                
 
             </div>
@@ -315,9 +158,6 @@
         <!-- /. PAGE WRAPPER  -->
     </div>
     <!-- /. WRAPPER  -->
-    <div id="footer-sec">
-        &copy; 2014 YourCompany | More Templates <a href="http://www.cssmoban.com/" target="_blank" title="模板之家">模板之家</a> - Collect from <a href="http://www.cssmoban.com/" title="网页模板" target="_blank">网页模板</a>
-    </div>
     <!-- /. FOOTER  -->
     <!-- SCRIPTS -AT THE BOTOM TO REDUCE THE LOAD TIME-->
     <!-- JQUERY SCRIPTS -->
@@ -333,6 +173,88 @@
     <script src="assets/js/custom.js"></script>
      <!-- CUSTOM Gallery Call SCRIPTS -->
     <script src="assets/js/galleryCustom.js"></script>
+    <script src="assets/js/ajaxfileupload.js"></script>
+    <script>
+        $(function () {
+
+            $(":button").click(function () {
+                ajaxFileUpload();
+            })
+        })
+        function ajaxFileUpload() {
+            $.ajaxFileUpload
+            (
+                {
+                    url: 'img.ashx', //用于文件上传的服务器端请求地址
+                    secureuri: false, //是否需要安全协议，一般设置为false
+                    fileElementId: 'file1', //文件上传域的ID
+                    dataType: 'json', //返回值类型 一般设置为json
+                    type: "post",
+                    data: { name: 'blog' },
+                    success: function (data, status)  //服务器成功响应处理函数
+                    {
+                        $("#img1").attr("src", "../" + data.imgurl);
+                        if (typeof (data.error) != 'undefined') {
+                            if (data.error != '') {
+                                alert(data.error);
+                            } else {
+                                alert(data.msg);
+                            }
+                        }
+                    },
+                    error: function (data, status, e)//服务器响应失败处理函数
+                    {
+                        alert(e);
+                    }
+                }
+            )
+            return false;
+        }
+        function editor(i) {
+            var id = $("tr:eq(" + (i + 1) + ")").children("td:eq(0)").text();
+            $("#text_id").val(id)
+            $("#text_text").val($("tr:eq(" + (i + 1) + ")").children("td:eq(1)").text())
+            $("#img1").attr("src", $("tr:eq(" + (i + 1) + ")").children("td:eq(2)").children().attr("src"))
+            $("#text_is").val($("tr:eq(" + (i + 1) + ")").children("td:eq(3)").text())
+        }
+        function t_add() {
+            var id = $("#text_id").val();
+            var text = $("#text_text").val()
+            var img = $("#img1").attr("src")
+            var is = $("#text_is").val()
+            if (id != null && text != null && img != null && is != null) {
+                $.post("add.ashx", { "page": "img", "id": id, "text": text, "img": img, "is": is}, function (a) {
+                    window.location.reload();
+                    $("#msg").text(a);
+                })
+            } else {
+                $("#msg").text("输入有误");
+            }
+        }
+        function t_editor() {
+            var id = $("#text_id").val();
+            var text = $("#text_text").val()
+            console.log(text);
+            var img = $("#img1").attr("src")
+            var is = $("#text_is").val()
+            if (id != null && text != null && img != null && is != null) {
+                $.post("editor.ashx", { "page": "img", "id": id, "text": text, "img": img, "is": is }, function (a) {
+                    window.location.reload();
+                    $("#msg").text(a);
+                })
+            } else {
+                $("#msg").text("输入有误");
+            }
+        }
+        function t_delete(i) {
+            $.post("delete.ashx", { "page": "img", "id": i }, function (a) {
+                window.location.reload();
+                $("#msg").text(a);
+            })
+        }
+
+
+    </script>
 </body>
 </html>
 

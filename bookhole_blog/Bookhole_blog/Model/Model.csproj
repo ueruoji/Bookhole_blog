@@ -119,10 +119,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="houtai_login.cs" />
+    <Compile Include="Img.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="showblog.cs" />
     <Compile Include="SysNode.cs" />
     <Compile Include="about_me.cs" />
     <Compile Include="blog_type.cs" />

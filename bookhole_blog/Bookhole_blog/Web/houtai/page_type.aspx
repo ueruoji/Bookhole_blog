@@ -59,19 +59,19 @@
 
 
                     <li>
-                        <a href="index.html"><i class="fa fa-dashboard "></i>主页</a>
+                        <a href="Home_page.aspx"><i class="fa fa-dashboard "></i>主页</a>
                     </li>
                     <li>
                         <a href="#"  class="active-menu-top"><i class="fa fa-desktop "></i>博客<span class="fa arrow"></span></a>
                          <ul class="nav nav-second-level collapse in">
                             <li>
-                                <a class="active-menu" href="panel-tabs.html"><i class="fa fa-toggle-on"></i>博客类型</a>
+                                <a class="active-menu" href="page_type.aspx"><i class="fa fa-toggle-on"></i>博客类型</a>
                             </li>
                             <li>
-                                <a href="notification.html"><i class="fa fa-bell "></i>博客</a>
+                                <a href="page_blog.aspx"><i class="fa fa-bell "></i>博客</a>
                             </li>
                              <li>
-                                <a href="progress.html"><i class="fa fa-circle-o "></i>博客评论</a>
+                                <a href="page_tell.aspx"><i class="fa fa-circle-o "></i>博客评论</a>
                             </li>
                         </ul>
                     </li>
@@ -79,25 +79,14 @@
                         <a href="#"><i class="fa fa-yelp "></i>用户 <span class="fa arrow"></span></a>
                          <ul class="nav nav-second-level">
                             <li>
-                                <a href="invoice.html"><i class="fa fa-coffee"></i>用户管理</a>
+                                <a href="page_user.aspx"><i class="fa fa-coffee"></i>用户管理</a>
                             </li>
                         </ul>
                     </li>
                     <li>
-                        <a  href="gallery.html"><i class="fa fa-anchor "></i>图片</a>
+                        <a  href="page_img.aspx"><i class="fa fa-anchor "></i>图片</a>
                     </li>
-                    <li>
-                        <a href="#"><i class="fa fa-bicycle "></i>Forms <span class="fa arrow"></span></a>
-                         <ul class="nav nav-second-level">
-                           
-                             <li>
-                                <a href="form.html"><i class="fa fa-desktop "></i>Basic </a>
-                            </li>
-                             <li>
-                                <a href="form-advance.html"><i class="fa fa-code "></i>Advance</a>
-                            </li>
-                        </ul>
-                    </li>
+                    
                 </ul>
 
             </div>
@@ -143,7 +132,6 @@
                                 </tbody>
                             </table>
                      
-                
             </div>
             <!-- /. PAGE INNER  -->
         </div>

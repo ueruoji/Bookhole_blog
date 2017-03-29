@@ -15,29 +15,40 @@ namespace Bookhole_blog.Web.bookashx
         {
             context.Response.ContentType = "text/plain";
             //博客类别
+            string session_user = null;
+            //if (context.Session["USER"] != null){
+            //    session_user = context.Session["USER"].ToString();
+            //}
             BLL.blog_type bll_type = new BLL.blog_type();
             List<Model.blog_type> list_type = bll_type.GetModelList("");
             //热门博客
             BLL.blogs bll_blogs = new BLL.blogs();
             List<Model.blogs> list_hotblogs = bll_blogs.GetModelList(" Blog_delete = 0 and Blog_is = 1 order by Blog_read  desc");
             Model.blogs moblogs = list_hotblogs[0];
-            moblogs.Blog_text = moblogs.Blog_text.Substring(0, 150);
-
             //图片分享
-            //推荐博客tui
+            BLL.img bll_img = new BLL.img();
+            List<Model.img> list_img = bll_img.GetModelList("Img_is=1");
+            //评论
+            BLL.tell bll_tell = new BLL.tell();
+            BLL.user bll_user = new BLL.user();
+            List<Model.tell> list_tell = bll_tell.GetModelList(" Tell_id>0 order by Tell_blogid  LIMIT 3");
+            for (int i = 0; i < list_tell.Count; i++)
+            {
+                Model.user model_user = bll_user.GetModel((int)list_tell[i].Tell_userid);
+                list_tell[i].Tell_img = model_user.User_img;
+                list_tell[i].Tell_name = model_user.User_name;
+            }
+            //推荐博客
 
             List<Model.blogs> list_tuiblogs = new List<Model.blogs> { list_hotblogs[1], list_hotblogs[2], list_hotblogs[3] };
-            for (int i = 1; i < 4; i++)
-            {
-                Model.blogs modelblogs = list_hotblogs[i];
-                modelblogs.Blog_text = modelblogs.Blog_text.Substring(0, 30);
-            }
-
             Model.Main main = new Model.Main()
             {
                 Main_type = list_type,
                 Main_hotblogs = moblogs,
-                Main_tuiblogs = list_tuiblogs
+                Main_tuiblogs = list_tuiblogs,
+                Main_tell = list_tell,
+                Main_img = list_img,
+                name = session_user
             };
             System.Web.Script.Serialization.JavaScriptSerializer js = new System.Web.Script.Serialization.JavaScriptSerializer();
             string json = js.Serialize(main);

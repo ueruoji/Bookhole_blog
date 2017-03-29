@@ -14,6 +14,56 @@ namespace Bookhole_blog.Web.houtai
         public void ProcessRequest(HttpContext context)
         {
             context.Response.ContentType = "text/plain";
+            //图片
+            if (context.Request["page"] == "img")
+            {
+                int id = Convert.ToInt32(context.Request["id"]);
+                string text = context.Request["text"];
+                string img = context.Request["img"];
+                int img_is = Convert.ToInt32(context.Request["is"]);
+                Model.img model_img = new Model.img()
+                {
+                    Img_id=id,
+                    Img_address =img,
+                    Img_is =img_is,
+                    Img_text = text
+
+                };
+                BLL.img bll_img = new BLL.img();
+                if (bll_img.Add(model_img) == true)
+                {
+                    context.Response.Write("添加成功");
+                }
+                else
+                {
+                    context.Response.Write("添加失败");
+                }
+            }
+            //用户
+            if (context.Request["page"] == "user") {
+                int id = Convert.ToInt32(context.Request["id"]);
+                string name = context.Request["name"];
+                string img = context.Request["img"];
+                int qq = Convert.ToInt32(context.Request["qq"]);
+                int phone = Convert.ToInt32(context.Request["phone"]);
+                Model.user model_user = new Model.user() {
+                    User_id = id,
+                    User_name = name,
+                    User_img = img,
+                    User_qq = qq,
+                    User_phone = phone,
+                    User_pwd = id.ToString()
+                };
+                BLL.user bll_user = new BLL.user();
+                if (bll_user.Add(model_user) == true)
+                {
+                    context.Response.Write("添加成功");
+                }
+                else
+                {
+                    context.Response.Write("添加失败");
+                }
+            }
             //博客
             if (context.Request["page"] == "blog")
             {

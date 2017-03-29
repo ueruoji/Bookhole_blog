@@ -21,6 +21,7 @@ namespace Bookhole_blog.Model
 		private int? _blog_typeid;
 		private string _blog_abstract;
         private string _blog_typename;
+        private int _blog_tell;
 		/// <summary>
 		/// 
 		/// </summary>
@@ -29,6 +30,11 @@ namespace Bookhole_blog.Model
 			set{ _blog_id=value;}
 			get{return _blog_id;}
 		}
+        public int Blog_tell
+        {
+            set { _blog_tell = value; }
+            get { return _blog_tell; }
+        }
         public string Blog_typename
         {
             set { _blog_typename = value; }

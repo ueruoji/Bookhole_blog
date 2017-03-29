@@ -14,11 +14,6 @@ namespace Bookhole_blog.Web.bookashx
         public void ProcessRequest(HttpContext context)
         {
             context.Response.ContentType = "text/plain";
-            if (context.Request.Cookies["userid"] != null && context.Request.Cookies["userpwd"] != null)
-            {
-                context.Response.Write(1);
-            }
-            else {
                 int userid = 0;
                 #region 没有cookie
                 if (int.TryParse(context.Request["username"], out userid))
@@ -58,15 +53,24 @@ namespace Bookhole_blog.Web.bookashx
                         }
 
                     }
-                    else {
-                        context.Response.Write("账号格式错误");
+                    else
+                    {
+                    if (context.Request.Cookies["userid"] != null && context.Request.Cookies["userpwd"] != null)
+                    {
+                        int id = Convert.ToInt32(context.Request.Cookies["userid"].Value);
+                        BLL.user bll_userid = new BLL.user();
+                        Model.user model_userid = bll_userid.GetModel(userid);
+                        context.Session["USER"] = model_user;
+                        object a = context.Session["USER"].ToString();
+                        context.Response.Write(1);
+                    }
+                    context.Response.Write("账号格式错误");
                     }
                     #endregion
                 }
-                #endregion
-            }
+                #endregion}
 
-        }
+            }
 
         public bool IsReusable
         {

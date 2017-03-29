@@ -21,7 +21,40 @@
                 <script src="assets/utf8-net/ueditor.config.js"></script>
     <!-- 编辑器源码文件 -->
                 <script src="assets/utf8-net/ueditor.all.js"></script>
+    <style type="text/css">
+        .a-upload {
+    padding: 4px 10px;
+    height: 30px;
+    line-height: 20px;
+    position: relative;
+    cursor: pointer;
+    color: #888;
+    background: #fafafa;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    overflow: hidden;
+    display: inline-block;
+    *display: inline;
+    *zoom: 1
+}
 
+.a-upload  input {
+    position: absolute;
+    font-size: 100px;
+    right: 0;
+    top: 0;
+    opacity: 0;
+    filter: alpha(opacity=0);
+    cursor: pointer
+}
+
+.a-upload:hover {
+    color: #444;
+    background: #eee;
+    border-color: #ccc;
+    text-decoration: none
+}
+    </style>
 </head>
 <body>
     <div id="wrapper">
@@ -64,19 +97,19 @@
 
 
                     <li>
-                        <a href="index.html"><i class="fa fa-dashboard "></i>主页</a>
+                        <a href="Home_page.aspx"><i class="fa fa-dashboard "></i>主页</a>
                     </li>
                     <li>
                         <a href="#"  class="active-menu-top"><i class="fa fa-desktop "></i>博客<span class="fa arrow"></span></a>
                          <ul class="nav nav-second-level collapse in">
                             <li>
-                                <a href="panel-tabs.html"><i class="fa fa-toggle-on"></i>博客类型</a>
+                                <a href="page_type.aspx"><i class="fa fa-toggle-on"></i>博客类型</a>
                             </li>
                             <li>
-                                <a  class="active-menu" href="notification.html"><i class="fa fa-bell "></i>博客</a>
+                                <a  class="active-menu" href="page_blog.aspx"><i class="fa fa-bell "></i>博客</a>
                             </li>
                              <li>
-                                <a href="progress.html"><i class="fa fa-circle-o "></i>博客评论</a>
+                                <a href="page_tell.aspx"><i class="fa fa-circle-o "></i>博客评论</a>
                             </li>
                         </ul>
                     </li>
@@ -84,25 +117,14 @@
                         <a href="#"><i class="fa fa-yelp "></i>用户 <span class="fa arrow"></span></a>
                          <ul class="nav nav-second-level">
                             <li>
-                                <a href="invoice.html"><i class="fa fa-coffee"></i>用户管理</a>
+                                <a href="page_user.aspx"><i class="fa fa-coffee"></i>用户管理</a>
                             </li>
                         </ul>
                     </li>
                     <li>
-                        <a href="gallery.html"><i class="fa fa-anchor "></i>图片</a>
+                        <a href="page_img.aspx"><i class="fa fa-anchor "></i>图片</a>
                     </li>
-                    <li>
-                        <a href="#"><i class="fa fa-bicycle "></i>Forms <span class="fa arrow"></span></a>
-                         <ul class="nav nav-second-level">
-                           
-                             <li>
-                                <a href="form.html"><i class="fa fa-desktop "></i>Basic </a>
-                            </li>
-                             <li>
-                                <a href="form-advance.html"><i class="fa fa-code "></i>Advance</a>
-                            </li>
-                        </ul>
-                    </li>
+                    
                 </ul>
 
             </div>
@@ -118,7 +140,7 @@
                                     <tr>
                                         <th></th>
                                         <th>博客标题</th>
-                                        <th>博客内容</th>
+                                        <th style="width:250px;">博客简介</th>
                                         <th>博客图片</th>
                                         <th>博客显示</th>
                                         <th>博客时间</th>
@@ -133,9 +155,9 @@
                                     <tr>
                                         <td><%=oblogs[i].Blog_id %></td>
                                         <td><span class="label label-danger"><%=oblogs[i].Blog_title %></span></td>
-                                        <td><%=oblogs[i].Blog_abstract %></td>
+                                        <td style="width:250px;"><%=oblogs[i].Blog_abstract %></td>
                                         <td>
-                                            <img src="../<%=oblogs[i].Blog_img %>" alt="Alternate Text" style="width:50px;height:50px;"/></td>
+                                            <img src="<%=oblogs[i].Blog_img %>" alt="Alternate Text" style="width:50px;height:50px;"/></td>
                                         <td><%=oblogs[i].Blog_is %></td>
                                         <td><%=oblogs[i].Blog_time %></td>
                                         <td><%=oblogs[i].Blog_typename %></td>
@@ -148,10 +170,15 @@
                                         <td><input type="text" id="text_id" style="width:50px;"/></td>
                                     
                                         <td><input type="text" id="text_title" /></td>
-                                              <td></td>
-                                        <td><input type="file" id="file1" name="file" />
-                                                 <input type="button" value="上传" />
-                                                 <img id="img1"  src="" style="width:100px;height:100px" /></td>
+                                        <td><input type="text" id="text_abs" style="width:230px;"/></td>
+                                        <td style="width:100px;">
+                                            <a href="javascript:;" class="a-upload">
+                                                <input type="file" id="file1" name="file" />选择图片
+                                            </a>
+                                            <input type="button" value="上传" />
+                                            <img id="img1"  src="" style="width:100px;height:100px" />
+
+                                        </td>
                                         <td><input type="text" id="text_is" style="width:30px;" /></td>
                                         <td><input type="text" id="text_time" style="width:100px;"/></td>
                                         <td><input type="text" id="text_typename"  style="width:50px;"/></td>
@@ -162,7 +189,7 @@
                                    
                                 </tbody>
                             </table>
-                    
+                    <span id="msg"></span>
 
             </div>
     <!-- 加载编辑器的容器 -->
@@ -190,19 +217,14 @@
     <script src="assets/js/custom.js"></script>
         <script src="assets/js/ajaxfileupload.js"></script>
     <script type="text/javascript">
-        var ue = UE.getEditor('container');
+        var ue = UE.getEditor('container', {
+            initialFrameHeight:300}
+        )
         $(function () {
            
             $(":button").click(function () {
                 ajaxFileUpload();
             })
-           
-            //ue.ready(function () {
-            //    //设置编辑器的内容
-            //    ue.setContent('hello');
-            //    //获取html内容，返回: <p>hello</p>
-            //    var html = ue.getContent();
-            //});
         })
         function ajaxFileUpload() {
             $.ajaxFileUpload
@@ -216,7 +238,7 @@
                     data:{name:'blog'},
                     success: function (data, status)  //服务器成功响应处理函数
                     {
-                        $("#img1").attr("src", "../"+data.imgurl);
+                        $("#img1").attr("src", "../" + data.imgurl);
                         if (typeof (data.error) != 'undefined') {
                             if (data.error != '') {
                                 alert(data.error);
@@ -237,6 +259,7 @@
             var id = $("tr:eq(" + (i + 1) + ")").children("td:eq(0)").text();
             $("#text_id").val(id)
             $("#text_title").val($("tr:eq(" + (i + 1) + ")").children("td:eq(1)").text())
+            $("#text_abs").val($("tr:eq(" + (i + 1) + ")").children("td:eq(2)").text())
             $("#img1").attr("src", $("tr:eq(" + (i + 1) + ")").children("td:eq(3)").children().attr("src"))
             $("#text_is").val($("tr:eq(" + (i + 1) + ")").children("td:eq(4)").text())
             $("#text_time").val($("tr:eq(" + (i + 1) + ")").children("td:eq(5)").text())
@@ -260,7 +283,13 @@
             var time = $("#text_time").val()
             var typename = $("#text_typename").val()
             var text = ue.getContent();
-            var abstract = ue.getContentTxt().substring(0, 20);
+            var abstract = null;
+            if ($("#text_abs").val() == null) {
+                abstract = ue.getContentTxt().substring(0, 20);
+            } else {
+                abstract = $("#text_abs").val();
+            }
+            
             if (id != null && title != null && img != null && showis != null && time != null && typename != null&&text!=null) {
                 $.post("add.ashx", { "page": "blog", "id": id, "title": title, "img": img, "showis": showis, "time": time, "typename": typename, "text": text, "abstract": abstract }, function (a) {
                     window.location.reload();
@@ -277,9 +306,10 @@
             var showis = $("#text_is").val()
             var time = $("#text_time").val()
             var typename = $("#text_typename").val()
+            var abs = $("#text_abs").val()
             var text = ue.getContent();
             if (id != null && title != null && img != null && showis != null && time != null && typename != null && text != null) {
-                $.post("editor.ashx", { "page": "blog", "id": id, "title": title, "img": img, "showis": showis, "time": time, "typename": typename, "text": text }, function (a) {
+                $.post("editor.ashx", { "page": "blog", "id": id, "title": title, "img": img, "showis": showis, "time": time, "typename": typename, "text": text,"abs":abs }, function (a) {
                     window.location.reload();
                     $("#msg").text(a);
                 })
