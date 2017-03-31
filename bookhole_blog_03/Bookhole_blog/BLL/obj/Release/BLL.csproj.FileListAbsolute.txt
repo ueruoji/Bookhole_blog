@@ -1,0 +1,14 @@
+C:\Users\ryh\Desktop\bookhole_blog\Bookhole_blog\BLL\bin\Release\Bookhole_blog.BLL.dll
+C:\Users\ryh\Desktop\bookhole_blog\Bookhole_blog\BLL\bin\Release\Bookhole_blog.Common.dll
+C:\Users\ryh\Desktop\bookhole_blog\Bookhole_blog\BLL\bin\Release\Bookhole_blog.DAL.dll
+C:\Users\ryh\Desktop\bookhole_blog\Bookhole_blog\BLL\bin\Release\Bookhole_blog.Model.dll
+C:\Users\ryh\Desktop\bookhole_blog\Bookhole_blog\BLL\bin\Release\OpenSmtp.dll
+C:\Users\ryh\Desktop\bookhole_blog\Bookhole_blog\BLL\bin\Release\Excel.dll
+C:\Users\ryh\Desktop\bookhole_blog\Bookhole_blog\BLL\bin\Release\COM.Excel.dll
+C:\Users\ryh\Desktop\bookhole_blog\Bookhole_blog\BLL\bin\Release\MySql.Data.dll
+C:\Users\ryh\Desktop\bookhole_blog\Bookhole_blog\BLL\bin\Release\Bookhole_blog.DBUtility.dll
+C:\Users\ryh\Desktop\bookhole_blog\Bookhole_blog\BLL\bin\Release\IBatisNet.DataMapper.dll
+C:\Users\ryh\Desktop\bookhole_blog\Bookhole_blog\BLL\bin\Release\IBatisNet.Common.dll
+C:\Users\ryh\Desktop\bookhole_blog\Bookhole_blog\BLL\bin\Release\System.Data.SQLite.dll
+C:\Users\ryh\Desktop\bookhole_blog\Bookhole_blog\BLL\obj\Release\BLL.csprojResolveAssemblyReference.cache
+C:\Users\ryh\Desktop\bookhole_blog\Bookhole_blog\BLL\obj\Release\Bookhole_blog.BLL.dll

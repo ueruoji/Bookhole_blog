@@ -1,0 +1,8 @@
+C:\Users\ryh\Desktop\bookhole_blog\Bookhole_blog\DBUtility\bin\Debug\Bookhole_blog.DBUtility.dll
+C:\Users\ryh\Desktop\bookhole_blog\Bookhole_blog\DBUtility\bin\Debug\Bookhole_blog.DBUtility.pdb
+C:\Users\ryh\Desktop\bookhole_blog\Bookhole_blog\DBUtility\bin\Debug\IBatisNet.Common.dll
+C:\Users\ryh\Desktop\bookhole_blog\Bookhole_blog\DBUtility\bin\Debug\IBatisNet.DataMapper.dll
+C:\Users\ryh\Desktop\bookhole_blog\Bookhole_blog\DBUtility\bin\Debug\MySql.Data.dll
+C:\Users\ryh\Desktop\bookhole_blog\Bookhole_blog\DBUtility\bin\Debug\System.Data.SQLite.DLL
+C:\Users\ryh\Desktop\bookhole_blog\Bookhole_blog\DBUtility\obj\Debug\Bookhole_blog.DBUtility.dll
+C:\Users\ryh\Desktop\bookhole_blog\Bookhole_blog\DBUtility\obj\Debug\Bookhole_blog.DBUtility.pdb

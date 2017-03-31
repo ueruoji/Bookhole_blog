@@ -1,0 +1,9 @@
+C:\Users\ryh\Desktop\bookhole_blog\Bookhole_blog\Common\bin\Debug\Bookhole_blog.Common.dll
+C:\Users\ryh\Desktop\bookhole_blog\Bookhole_blog\Common\bin\Debug\Bookhole_blog.Common.pdb
+C:\Users\ryh\Desktop\bookhole_blog\Bookhole_blog\Common\bin\Debug\COM.Excel.dll
+C:\Users\ryh\Desktop\bookhole_blog\Bookhole_blog\Common\bin\Debug\Excel.dll
+C:\Users\ryh\Desktop\bookhole_blog\Bookhole_blog\Common\bin\Debug\OpenSmtp.dll
+C:\Users\ryh\Desktop\bookhole_blog\Bookhole_blog\Common\bin\Debug\OWC10Chart.dll
+C:\Users\ryh\Desktop\bookhole_blog\Bookhole_blog\Common\obj\Debug\Bookhole_blog.Common.dll
+C:\Users\ryh\Desktop\bookhole_blog\Bookhole_blog\Common\obj\Debug\Bookhole_blog.Common.pdb
+C:\Users\ryh\Desktop\bookhole_blog\Bookhole_blog\Common\obj\Debug\Common.csprojResolveAssemblyReference.cache

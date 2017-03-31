@@ -1,0 +1,2 @@
+C:\Users\ryh\Desktop\bookhole_blog\Bookhole_blog\Model\bin\Release\Bookhole_blog.Model.dll
+C:\Users\ryh\Desktop\bookhole_blog\Bookhole_blog\Model\obj\Release\Bookhole_blog.Model.dll

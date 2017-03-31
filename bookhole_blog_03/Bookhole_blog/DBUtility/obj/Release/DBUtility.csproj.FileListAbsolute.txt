@@ -1,0 +1,7 @@
+C:\Users\ryh\Desktop\bookhole_blog\Bookhole_blog\DBUtility\bin\Release\Bookhole_blog.DBUtility.dll
+C:\Users\ryh\Desktop\bookhole_blog\Bookhole_blog\DBUtility\bin\Release\IBatisNet.Common.dll
+C:\Users\ryh\Desktop\bookhole_blog\Bookhole_blog\DBUtility\bin\Release\IBatisNet.DataMapper.dll
+C:\Users\ryh\Desktop\bookhole_blog\Bookhole_blog\DBUtility\bin\Release\MySql.Data.dll
+C:\Users\ryh\Desktop\bookhole_blog\Bookhole_blog\DBUtility\bin\Release\System.Data.SQLite.DLL
+C:\Users\ryh\Desktop\bookhole_blog\Bookhole_blog\DBUtility\obj\Release\DBUtility.csprojResolveAssemblyReference.cache
+C:\Users\ryh\Desktop\bookhole_blog\Bookhole_blog\DBUtility\obj\Release\Bookhole_blog.DBUtility.dll
